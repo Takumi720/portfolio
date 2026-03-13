@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タコス日墨 - 次世代のパフォーマンス・フード</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Eczar:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    
+    <!-- オリジナルCSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="news">
+
+    <!-- ローディングアニメーション -->
+    <div id="loading" class="loading">
+        <img src="img/logo.svg" alt="ロゴ" class="loading-logo">
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="header">
+        <div class="header-inner">
+            <!-- ロゴ -->
+            <h1 class="header-logo">
+                <a href="index.html">
+                    <img src="img/logo.svg" alt="ロゴアイコン" class="header-logo-icon">
+                    <span class="header-logo-text">タコス日墨</span>
+                </a>
+            </h1>
+            
+            <!-- PC ナビゲーション -->
+            <nav class="header-nav">
+                <ul class="header-nav-list">
+                    <li class="header-nav-item">
+                        <a href="index.html#about" class="header-nav-link">About</a>
+                    </li>
+                    <li class="header-nav-item has-submenu">
+                        <a href="menu.html#lineup" class="header-nav-link">Menu</a>
+                        <div class="header-submenu">
+                            <ul class="header-submenu-list">
+                                <li><a href="menu.html#menu-tacos">タコス</a></li>
+                                <li><a href="menu.html#menu-salsa">サルサ</a></li>
+                                <li><a href="menu.html#menu-set">セットメニュー</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-nav-item">
+                        <a href="index.html#story" class="header-nav-link">Story</a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a href="news.html" class="header-nav-link">News</a>
+                    </li>
+                    <li class="header-nav-item has-submenu">
+                        <a href="contact.html" class="header-nav-link">Contact</a>
+                        <div class="header-submenu">
+                            <ul class="header-submenu-list">
+                                <li><a href="contact.html">お問い合わせ</a></li>
+                                <li><a href="contact.html">店舗情報</a></li>
+                                <li><a href="contact.html">アルバイト募集</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- ユーザーアクション -->
+            <div class="header-actions">
+                <a href="#" class="header-action-link" aria-label="マイページ">
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+                <a href="#" class="header-action-link" aria-label="カート">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+            
+            <!-- ハンバーガーメニュー（SP） -->
+            <button class="header-hamburger" id="menuToggle" aria-label="メニュー">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- 背景オーバーレイ（SP用） -->
+    <div class="global-menu-overlay" id="menuOverlay"></div>
+    
+    <!-- SPグローバルメニュー -->
+    <nav id="globalMenu" class="global-menu">
+        <div class="global-menu-container">
+            <!-- 左側: 主要ナビ -->
+            <div class="global-menu-main">
+                <ul class="global-menu-main-list">
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="menu.html#lineup">Menu</a></li>
+                    <li><a href="index.html#story">Story</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- 右側: サブメニュー -->
+            <div class="global-menu-sub-area">
+                <div class="global-menu-group">
+                    <h3 class="global-menu-title">Menu</h3>
+                    <ul class="global-menu-sub">
+                        <li><a href="menu.html#menu-tacos">タコス</a></li>
+                        <li><a href="menu.html#menu-salsa">サルサ</a></li>
+                        <li><a href="menu.html#menu-set">セットメニュー</a></li>
+                    </ul>
+                </div>
+                
+                <div class="global-menu-group">
+                    <h3 class="global-menu-title">Contact</h3>
+                    <ul class="global-menu-sub">
+                        <li><a href="contact.html">お問い合わせ</a></li>
+                        <li><a href="contact.html">店舗情報</a></li>
+                        <li><a href="contact.html">アルバイト募集</a></li>
+                    </ul>
+                </div>
+                
+                <div class="global-menu-group">
+                    <h3 class="global-menu-title">User</h3>
+                    <ul class="global-menu-sub">
+                        <li><a href="#">マイページ</a></li>
+                        <li><a href="#">カート</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <main>
+        
+
+
+
+        <!-- Line Up（Menu）セクション -->
+        <section class="news-hero" id="lineup">
+            <div class="wrapper">
+                <p class="news-hero-sub">LATEST INFORMATION</p>
+                <h2 class="news-hero-title">NEWS</h2>
+            </div>
+        </section>
+
+        <nav class="news-nav">
+            <ul class="news-nav-list">
+                <li class="active">ALL</li>
+                <li>INFO</li>
+                <li>MAP</li>
+                <li>MENU</li>
+            </ul>
+        </nav>
+
+        <!--  ニュース -->
+        <div class="wrapper">
+            <div class="col-grid col-3">
+                
+                <article class="news-item" data-category="info">
+                    <a href="#">
+                        <div class="news-item-img">
+                            <img src="img/Whisk_calendar.webp" alt="ニュース画像">
+                            <span class="news-item-label">INFO</span>
+                        </div>
+                        <div class="news-item-content">
+                            <time class="news-item-date">2026.01.06</time>
+                            <h3 class="news-item-ttl">1月の営業日、時間</h3>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-item" data-category="info">
+                    <a href="#">
+                        <div class="news-item-img">
+                            <img src="img/kakuni.webp" alt="ニュース画像">
+                            <span class="news-item-label">INFO</span>
+                        </div>
+                        <div class="news-item-content">
+                            <time class="news-item-date">2025.12.25</time>
+                            <h3 class="news-item-ttl">年末年始営業日について</h3>
+                        </div>
+                    </a>
+                </article>
+
+
+                <article class="news-item" data-category="menu">
+                    <a href="#">
+                        <div class="news-item-img">
+                            <img src="img/atoresamune.webp" alt="ニュース画像">
+                            <span class="news-item-label">MENU</span>
+                        </div>
+                        <div class="news-item-content">
+                            <time class="news-item-date">2025.11.15</time>
+                            <h3 class="news-item-ttl">豆乳アトレの作り方</h3>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="news-item" data-category="map">
+                    <a href="#">
+                        <div class="news-item-img">
+                            <img src="img/Whisk_ibento.webp" alt="ニュース画像">
+                            <span class="news-item-label">MAP</span>
+                        </div>
+                        <div class="news-item-content">
+                            <time class="news-item-date">2025.10.20</time>
+                            <h3 class="news-item-ttl">イベント出展について</h3>
+                        </div>
+                    </a>
+                </article>
+                
+                </div>
+        </div>
+
+                <!-- Story セクション -->
+                <section class="sec-03-img" id="story">
+                    <div class="wrapper">
+                        <div class="sec-03">
+
+                            <div class="map-warp fade-up">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13459.633893993187!2d131.6710049!3d32.501875350000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3547175a6cbfd42f%3A0x44cb4e3f5842648e!2z5p2x5Lmd5bee6Ieq5YuV6LuK5a2m5qCh!5e0!3m2!1sja!2sjp!4v1770345896243!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                            <div class="sec-03-text">
+                                <h2 class="sec-03-label">住所</h2>
+                                <h4 class="sec-03-subtitle">〒000-0000 東京都〇〇区〇〇 1-2-3</h4>
+                                <p>
+                                    TEL: 03-0000-0000
+                                </p>
+                                <p>
+                                    営業時間 <span>11:30〜19:30（L.O.19:00）</span>
+                                </p>
+                                <P>
+                                    休み <span>火・水 連休</span>
+                                </P>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </section>
+
+
+        <!-- テキストスクロールセクション -->
+        <section class="text-scroll">
+            <div class="text-scroll-inner">
+                <span>TACOS NICHIBOKU</span>
+                <span>TACOS NICHIBOKU</span>
+                <span>TACOS NICHIBOKU</span>
+                <span>TACOS NICHIBOKU</span>
+                <span>TACOS NICHIBOKU</span>
+                <span>TACOS NICHIBOKU</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="footer" id="contact">
+        <div class="footer-bg">
+            <img src="img/footer.webp" alt="フッター背景">
+        </div>
+        <div class="wrapper">
+            <div class="footer-main">
+                <!-- ナビゲーション -->
+                <nav class="footer-nav">
+                    <ul class="footer-nav-list">
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="menu.html#lineup">Menu</a></li>
+                        <li><a href="index.html#story">Story</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- アクション -->
+                <div class="footer-actions">
+                    <ul class="footer-actions-list">
+                        <li><a href="#">マイページ</a></li>
+                        <li><a href="#">カート</a></li>
+                    </ul>
+                </div>
+                
+                <!-- 住所 -->
+                <div class="footer-address">
+                    <p>〒000-0000</p>
+                    <p>東京都〇〇区〇〇 1-2-3</p>
+                    <a href="https://maps.google.com" target="_blank">google map</a>
+                    <p>TEL: 03-0000-0000</p>
+                </div>
+                
+                <!-- SNS -->
+                <div class="footer-sns">
+                    <p>Follow Us</p>
+                    <a href="#" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- リンク集 -->
+            <div class="footer-links">
+                <ul class="footer-links-list">
+                    <li><a href="#">特定商取引法に基づく表記</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">利用規約</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+            
+            <!-- ロゴ -->
+            <div class="footer-logo">
+                <img src="img/logo.svg" alt="タコス日墨" class="footer-logo-icon">
+                <span class="footer-logo-text">タコス日墨</span>
+            </div>
+            
+            <!-- コピーライト -->
+            <p class="footer-copyright">© 2025 タコス日墨</p>
+        </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- オリジナルJS -->
+    <script src="js/common.js"></script>
+</body>
+</html>
